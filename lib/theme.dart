@@ -15,6 +15,7 @@ Color primaryTextColor = Color(0XFFF1F0F2);
 Color secondaryTextColor = Color(0XFF999999);
 Color subtitleColor = Color(0XFF504F5E);
 Color greyInactiveColor = Color(0XFF808191);
+Color transparantColor = Colors.transparent;
 
 TextStyle primaryTextStyle = GoogleFonts.poppins(
   color: primaryTextColor,
