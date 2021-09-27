@@ -18,6 +18,7 @@ Color greyInactiveColor = Color(0XFF808191);
 Color transparantColor = Colors.transparent;
 Color blackColor = Color(0XFF2E2E2E);
 Color backgorundShoes = Color(0XFFECEDEF);
+Color dividerColor = Color(0XFF2B2939);
 
 TextStyle primaryTextStyle = GoogleFonts.poppins(
   color: primaryTextColor,
