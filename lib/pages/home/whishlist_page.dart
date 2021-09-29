@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shamo/theme.dart';
+import 'package:shamo/widgets/whishlist_card.dart';
 
 class WhishlistPage extends StatelessWidget {
   @override
@@ -71,8 +72,26 @@ class WhishlistPage extends StatelessWidget {
       );
     }
 
+    Widget content() {
+      return Expanded(
+        child: Container(
+          color: backgroundColor3,
+          child: ListView(
+            padding: EdgeInsets.symmetric(horizontal: defaultMargin),
+            children: [
+              WhishlistCard(),
+            ],
+          ),
+        ),
+      );
+    }
+
     return Column(
-      children: [header(), emptyWhishlist()],
+      children: [
+        header(),
+        // emptyWhishlist(),
+        content(),
+      ],
     );
   }
 }
