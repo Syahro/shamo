@@ -181,9 +181,16 @@ class HomePage extends StatelessWidget {
         child: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
-            children: productProvider.products
-                .map((product) => ProductCard(product))
-                .toList(),
+            children: [
+              SizedBox(
+                width: defaultMargin,
+              ),
+              Row(
+                children: productProvider.products
+                    .map((product) => ProductCard(product))
+                    .toList(),
+              ),
+            ],
           ),
         ),
       );
@@ -206,7 +213,9 @@ class HomePage extends StatelessWidget {
           top: 14,
         ),
         child: Column(
-          children: productProvider.products.map((product) => ProductTile(product)).toList(),
+          children: productProvider.products
+              .map((product) => ProductTile(product))
+              .toList(),
         ),
       );
     }
