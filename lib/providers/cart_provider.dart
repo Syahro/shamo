@@ -29,7 +29,7 @@ class CartProvider with ChangeNotifier {
   }
 
   removeCart(int id) {
-    _carts.remove(id);
+    _carts.removeAt(id);
     notifyListeners();
   }
 
