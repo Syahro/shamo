@@ -18,7 +18,7 @@ class TransactionService {
       'items': cart
           .map((cart) => {
                 'id': cart.product.id,
-                'quantyty': cart.quantity,
+                'quantity': cart.quantity,
               })
           .toList(),
       'status': 'PENDING',
