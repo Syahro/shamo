@@ -2,6 +2,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shamo/models/product_model.dart';
+import 'package:shamo/pages/detail_chat_page.dart';
+import 'package:shamo/pages/home/chat_page.dart';
 import 'package:shamo/providers/cart_provider.dart';
 import 'package:shamo/providers/wishlist_provider.dart';
 import 'package:shamo/theme.dart';
@@ -379,17 +381,26 @@ class _ProductPageState extends State<ProductPage> {
               width: double.infinity,
               child: Row(
                 children: [
-                  Container(
-                    width: 54,
-                    height: 54,
-                    padding: EdgeInsets.all(16),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                      border: Border.all(color: primaryColor),
-                    ),
-                    child: Image.asset(
-                      'assets/icon_chat1.png',
-                      width: double.infinity,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  DetailChatPage(widget.product)));
+                    },
+                    child: Container(
+                      width: 54,
+                      height: 54,
+                      padding: EdgeInsets.all(16),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(color: primaryColor),
+                      ),
+                      child: Image.asset(
+                        'assets/icon_chat1.png',
+                        width: double.infinity,
+                      ),
                     ),
                   ),
                   SizedBox(
