@@ -26,11 +26,11 @@ class MessageModel {
     userName = json['userName'];
     userImage = json['userImage'];
     isFromUser = json['isFromUser'];
-    product = json['product'] == {}
+    product = json['product'].isEmpty
         ? UninitializedProductModel()
         : ProductModel.fromJson(json['product']);
-    createdAt = json['createdAt'];
-    updatedAt = json['updatedAt'];
+    createdAt = DateTime.parse(json['createdAt']);
+    updatedAt = DateTime.parse(json['updatedAt']);
   }
 
   Map<String, dynamic> toJson() {

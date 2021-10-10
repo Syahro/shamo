@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shamo/models/product_model.dart';
 import 'package:shamo/theme.dart';
 
 class ChatBubble extends StatelessWidget {
   final String text;
   final bool isSender;
-  final bool hasProduct;
+  final ProductModel product;
 
-  ChatBubble({this.text, this.isSender, this.hasProduct = false});
+  ChatBubble({this.text, this.isSender, this.product});
   @override
   Widget build(BuildContext context) {
     Widget productReview() {
@@ -112,7 +113,7 @@ class ChatBubble extends StatelessWidget {
         crossAxisAlignment:
             isSender ? CrossAxisAlignment.end : CrossAxisAlignment.start,
         children: [
-          hasProduct ? productReview() : SizedBox(),
+          product is UninitializedProductModel ? SizedBox() : productReview(),
           Row(
             mainAxisAlignment:
                 isSender ? MainAxisAlignment.end : MainAxisAlignment.start,
