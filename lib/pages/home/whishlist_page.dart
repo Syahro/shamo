@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:shamo/providers/page_provider.dart';
 import 'package:shamo/providers/wishlist_provider.dart';
 import 'package:shamo/theme.dart';
 import 'package:shamo/widgets/whishlist_card.dart';
@@ -9,6 +10,7 @@ class WhishlistPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     WishlistProvider wishlistProvider = Provider.of<WishlistProvider>(context);
+    PageProvider pageProvider = Provider.of<PageProvider>(context);
     Widget header() {
       return AppBar(
         backgroundColor: backgroundColor1,
@@ -53,8 +55,7 @@ class WhishlistPage extends StatelessWidget {
                 height: 44,
                 child: TextButton(
                   onPressed: () {
-                    Navigator.pushNamedAndRemoveUntil(
-                        context, '/home', (route) => false);
+                    pageProvider.currentIndex = 0;
                   },
                   style: TextButton.styleFrom(
                     backgroundColor: primaryColor,

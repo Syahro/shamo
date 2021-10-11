@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shamo/providers/cart_provider.dart';
+import 'package:shamo/providers/page_provider.dart';
 import 'package:shamo/theme.dart';
 import 'package:shamo/widgets/cart_card.dart';
 
-class Cartpage extends StatelessWidget {
+class Cartpage extends StatefulWidget {
+  @override
+  _CartpageState createState() => _CartpageState();
+}
+
+class _CartpageState extends State<Cartpage> {
   @override
   Widget build(BuildContext context) {
     CartProvider cartProvider = Provider.of<CartProvider>(context);
+    PageProvider pageProvider = Provider.of<PageProvider>(context);
     Widget header() {
       return AppBar(
         backgroundColor: backgroundColor1,
@@ -50,8 +57,7 @@ class Cartpage extends StatelessWidget {
               margin: EdgeInsets.only(top: 20),
               child: TextButton(
                 onPressed: () {
-                  Navigator.pushNamedAndRemoveUntil(
-                      context, '/home', (route) => false);
+                  Navigator.pushNamed(context, '/home');
                 },
                 style: TextButton.styleFrom(
                     backgroundColor: primaryColor,
